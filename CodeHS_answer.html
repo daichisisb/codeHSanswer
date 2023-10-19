@@ -1,0 +1,1365 @@
+<html>
+<!DOCTYPE html>
+
+<html>
+<!--1.2.6-->
+    <body>
+        <h3>Introduce yourself to the webpage!</h3>
+        <script>
+            var name = prompt("What is your name?");
+            alert("Hi " + name + ", it's nice to meet you!");
+        </script>
+    </body>
+    
+
+<!--1.2.7-->
+    <!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Error #1:
+        Console message: Uncaught SyntaxError: Unexpected string
+        Error line number: 22
+        
+        Error #2: 
+        Console message: Uncaught SyntaxError: missing ) after argument list
+        Error line number: 23
+        --> 
+    </head>
+    <body>
+        <h3>Fix me!</h3>
+        
+        <script>
+          
+            console.log("Something is wrong with the code! Find the error and fix it!");
+            
+            prompt("What is today's date?");
+            alert("Have a wonderful day!");
+        </script>
+    </body>
+</html>
+    
+    
+<!--1.2.8-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quick Trivia</title>
+    </head>
+
+    <body>
+        <script>
+            var counter = 0;
+            var ANSWER_ONE = "2012";
+            var ANSWER_TWO = "5";
+            var ANSWER_THREE = "kangaroo";
+
+            var responseOne = prompt("What year was CodeHS founded?");
+            if(responseOne == ANSWER_ONE)
+            {
+                counter++;
+                alert("Correct!");
+            }
+            else
+            {
+                alert("Close! The correct answer is: " + ANSWER_ONE);
+            }
+            var responseTwo = prompt("How many oceans are on planet Earth?");
+            if(responseTwo == ANSWER_TWO)
+            {
+                counter++
+                alert("Correct!");
+            }
+            else
+            {
+                alert("Close! The correct answer is: " + ANSWER_TWO);
+            }
+            var responseThree = prompt("What animal has the scientific name Macropus Giganteus");
+            if(responseThree == ANSWER_THREE)
+            {
+                counter++
+                alert("Correct!");
+            }
+            else
+            {
+                alert("Close! The correct answer is: " + ANSWER_THREE);
+            }
+            alert("Nice! You got " + counter + " correct out of 3!");
+        </script>
+    </body>
+</html>
+    
+<!--1.3.4-->
+    
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Introductions</title>
+	</head>
+
+	<body>
+		<h3 id=welcome></h3>
+		<h3 id=snack></h3>
+		<h3 id=tv-show></h3>
+		
+		<script>
+		    var name = prompt("What's your name?");
+		    var snack = prompt("What's your favorite snack?");
+		    var show = prompt("What's your favorite tv show?");
+		    
+		    var welcome = document.getElementById("welcome");
+		    welcome.innerHTML = "This is " + name;
+		    
+		    var snackh3 = document.getElementById("snack");
+		    snackh3.innerHTML = name + " likes eating " + snack +".";
+		    
+		    var tvshow = document.getElementById("tv-show");
+		    tvshow.innerHTML = name + " eats " + snack + " while watching their favorite show, " + show +".";
+		</script>
+	</body>
+</html>
+<!--1.3.5-->
+<!DOCTYPE html>
+<html>
+	<body>
+	    <p> The sum of <span id = "num_one"> 4 </span>and<span id = "num_two"> 6</span> is:</p>
+		<p id = "result"></p>
+		<script>
+		    var num1 = document.getElementById("num_one");
+		    var num2 = document.getElementById("num_two");
+            num1 = parseInt(num1.innerHTML);
+            num2 = parseInt(num2.innerHTML);
+            var sum = num1 + num2;
+            document.getElementById("result").innerHTML = sum;
+		</script>
+	</body>
+</html>
+    
+    
+<!--1.3.9-->
+<!DOCTYPE html>
+<html>
+	<body>
+	    <h2>Tonight's Menu</h2>
+		<ol>
+		    <li>Caesar Salad</li>
+		    <li>French Onion Soup</li>
+		    <li>Mac N Cheese</li>
+		    <li>Pork Chops with Spinach</li>
+		    <li>Cheesecake</li>
+		</ol>
+		<script>
+		//Commented out so that the alerts don't go off when students open the exercise!
+		    var liList = document.getElementsByTagName("li");
+		  alert("My favorite item on the menu is "+ liList[2].innerHTML);
+		  alert("My least favorite item on the menu is " + liList[1].innerHTML);
+		</script>
+	</body>
+</html>
+
+    
+<!--1.3.10-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Your Page Title</title>
+	</head>
+
+	<body>
+		<h3>Which paragraph is longest?</h3>
+        <p>“The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.” - Jack Kerouac, On The Road</p>
+		<p>“He allowed himself to be swayed by his conviction that human beings are not born once and for all on the day their mothers give birth to them, but that life obliges them over and over again to give birth to themselves.” - Gabriel Garcí­a Márquez, Love in the Time of Cholera</p>
+		<p>“Usually we walk around constantly believing ourselves. “I’m okay” we say. “I’m alright”. But sometimes the truth arrives on you and you can’t get it off. That’s when you realize that sometimes it isn’t even an answer–it’s a question. Even now, I wonder how much of my life is convinced.” - Markus Zusak, The Book Thief</p>
+		<p>“I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.” - Frank Herbert, Dune</p>
+		<p>“Just remember that the things you put into your head are there forever, he said. You might want to think about that. You forget some things, dont you? Yes. You forget what you want to remember and you remember what you want to forget.” – Cormac McCarthy, The Road</p>
+		<h3 id = "longest"></h3>
+		<script>
+		    var list = document.getElementsByTagName("p");
+		    var max = list[0].innerHTML.length;
+		    var pNum = 1;
+		    for(var i = 0; i < list.length; i++)
+		    {
+		        if(list[i].innerHTML.length > max)
+		        {
+		            max = list[i].innerHTML.length;
+		            pNum = i + 1;
+		        }
+		    }
+		    var longest = document.getElementById("longest");
+		    //The answer should be paragraph 4 for students!
+		    longest.innerHTML = "The longest paragraph is paragraph " + pNum;
+		</script>
+	</body>
+</html>
+    
+<!--1.4.5-->
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id = "class-window">
+		    <h2> Student Class List</h2>
+		    <ul id = "class-list">
+		        <li>Karel the Dog</li>
+		        <li>Tracy the Turtle</li>
+		        <li>Jeremy the Human</li>
+		    </ul>
+		</div>
+		<script>
+		    var item = document.createElement("li");
+		    item.innerHTML = "Alex the Human";
+		    var list = document.getElementById("class-list");
+		    list.appendChild(item);
+		    
+		    var className = document.createElement("h4");
+		    className.innerHTML = "CodeHS Class:";
+		    document.getElementById("class-window").insertBefore(className, list);
+		</script>
+	</body>
+</html>
+<!--1.4.6-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        td{
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+	<body>
+		<table border = "1" id= "chores">
+    		<tr id = "days">
+    		    <th>Monday</th>
+    		    <th>Tuesday</th>
+    		    <th>Wednesday</th>
+    		    <th>Thursday</th>
+    		    <th>Friday</th>
+    		</tr>
+    		<tr id = "tasks">
+    		    <td></td>
+    		    <td></td>
+    		    <td></td>
+    		    <td></td>
+    		    <td></td>
+    		</tr>
+		</table>
+		<script>
+		    var choresList = document.createElement("ul");
+		    var chore = document.createElement("li");
+		    chore.innerHTML = "Clean my room...";
+		    var choreList = document.getElementById("tasks").children;
+		    choresList.append(chore);
+		    choreList[1].appendChild(choresList);
+		    
+		  //Solution to the challenge
+		   var tempRow = document.createElement("tr");
+		   for(var i = 0; i <5; i++)
+		    {
+		        var tempData = document.createElement("td");
+		        tempRow.appendChild(tempData);
+		    }
+		    var tasks = document.getElementById("tasks");
+		    var chores = document.getElementById("chores").firstElementChild;
+		    chores.insertBefore(tempRow,tasks);
+		</script>
+	</body>
+</html>
+    
+<!--1.5.5-->
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "web-page">
+		    Check out my website
+		</p>
+		<script>
+		    var link = document.createElement("a");
+		    link.innerHTML = "here!";
+		    link.setAttribute("href", "https://www.codehs.com/sandbox");
+		    var p = document.getElementById("web-page");
+		    p.appendChild(link);
+		</script>
+	</body>
+</html>
+
+    
+<!--1.5.6-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create a Flag</title>
+		<style>
+		    html, body{
+		        display: flex;
+		        flex-direction: column;
+		        align-items: stretch;
+		        height: 100%;
+		    }
+		    div{
+		        flex: 1;
+		    }
+		</style>
+	</head>
+
+	<body>
+		<div id = "color-one">
+		    
+		</div>
+		<div id ="color-two">
+		    
+		</div>
+		<div id = "color-three">
+		</div>
+		<script>
+		    var colorOne = prompt("Pick your first color for your flag:");
+		    var colorTwo = prompt("Now the second:");
+		    var colorThree = prompt("Now the third:");
+		    var divs = document.getElementsByTagName("div");
+		    divs[0].setAttribute("style", "background-color: " + colorOne);
+		    divs[1].setAttribute("style", "background-color: " + colorTwo);
+		    divs[2].setAttribute("style", "background-color: " + colorThree);
+		    
+		    // Alternate Solution:
+		    var colorOne = prompt("Color One");
+		    var colorTwo = prompt("Color Two");
+		    var colorThree = prompt("Color Three");
+		    
+		    var threeAtt = "background-color:" + colorThree;
+		    var twoAtt = "background-color:" + colorTwo;
+		    var oneAtt = "background-color:" + colorOne;
+		    
+		    document.getElementById("color-three").setAttribute("style", threeAtt);
+		    document.getElementById("color-two").setAttribute("style", twoAtt);
+		    document.getElementById("color-one").setAttribute("style", oneAtt);
+		    
+		</script>
+	</body>
+</html>
+    
+<!--1.5.7-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display:flex;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+	<body>
+	
+	<script>
+	    for(var i = 0; i < 49; i++)
+	    {
+	        var div = document.createElement("div");
+	        if(i % 2 == 0)
+	        {
+	            div.style.backgroundColor = "black";
+	        }
+	        else
+	        {
+	            div.style.backgroundColor = "red";
+	        }
+	        div.style.height = "60px";
+	        div.style.width = "14%";
+	        document.body.appendChild(div);
+	    }
+	</script>
+	</body>
+</html>
+    
+<!--1.6.5-->
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+		    function announcement(title)
+		    {
+		        var announce = document.createElement("h2");
+		        announce.innerHTML = title;
+		        document.body.appendChild(announce);
+		    }
+		    
+		    announcement("Extra Extra, Read All About It!");
+		    announcement("Big News Here!");
+		</script>
+	</body>
+</html>
+<!--1.6.6-->
+<!DOCTYPE html>
+<html>
+	<body>
+	    <h3>Random Number Generator</h3>
+	    <h4>Click the button to generate a random number!</h4>
+	    <button id = rand>Generate Random Number</button>
+	    <p id = num-display></p>
+	    <script>
+	        
+	        var button = document.getElementById("rand");
+	        button.addEventListener("click", randomNum)
+	        
+	        function randomNum()
+	        {
+	            var num = Math.floor(Math.random() * 11);
+	            var p = document.getElementById("num-display");
+	            p.innerHTML = "Your random number from 0 - 10 is: " + num;
+	        }
+	    </script>
+	</body>
+</html>
+
+<!--1.6.7-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		   html,body{
+		        display:flex;
+		        flex-direction: column;
+		        height:100%;
+		    }
+		    div{
+		        flex:1;
+		        text-align: center;
+		    }
+		</style>
+	</head>
+
+	<body>
+		<div>
+		    <button onclick = addColor()>Click Me to Add a Color!</button>
+		</div>
+		<script>
+		    function addColor(){
+		        var div = document.createElement("div");
+		        var color = prompt("Add color:");
+		        div.setAttribute("style","background-color: " + color);
+		        document.body.appendChild(div);
+		    }
+		</script>
+	</body>
+</html>
+<!--1.7.5-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html,body{
+                display: flex;
+                align-items:center;
+                justify-content: center;
+                height:100%;
+            }
+            div{
+                border: solid 1px 
+black;
+                height:50px;
+                width:50px;
+                margin:5px;
+            }
+        </style>
+    </head>
+	<body>
+		<div onclick = changeColor(this)></div>
+        <div onclick = changeColor(this)></div>
+		<script>
+		    
+		    function changeColor(element)
+		    {
+		        var color = prompt("What color would you like this to be?")
+		        element.style.backgroundColor = color;
+		    }
+		</script>
+	</body>
+</html>
+    
+    
+<!--1.7.6-->
+<!DOCTYPE html>
+<html>
+	<body>
+		<h3>To Do List:</h3>
+		<ul>
+		    <li>Homework</li>
+		    <li>Walk Karel</li>
+		    <li>Make Dinner</li>
+		    <li>Clean Room</li>
+		</ul>
+		<script>
+		    var liList = document.getElementsByTagName("li");
+		    for(var i = 0; i < liList.length; i++)
+		    {
+		        liList[i].addEventListener("click", crossOff);
+		    }
+		    
+		    function crossOff()
+		    {
+		        if(this.getAttribute("style") == "text-decoration: line-through")
+		        {
+		            this.removeAttribute("style");
+		        }
+		        else
+		        {
+		            this.setAttribute("style", "text-decoration: line-through");
+		        }
+		    }
+		</script>
+	</body>
+</html>
+
+
+<!--1.7.7-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		        display:flex;
+		        flex-wrap: wrap;
+		        height:100%;
+		        width:100%;
+		        padding-left:2%;
+		        padding-right:2%;
+		    }
+		    div{
+		        height:10%;
+		        width:9%;
+		        border: 1px solid 
+black;
+		    }
+		</style>
+	</head>
+	<body>
+		<script>
+		    for(var i = 0; i <100; i++)
+		    {
+		        var div = document.createElement("div");
+		        div.addEventListener("mouseover", paint);
+		        document.body.appendChild(div);
+		    }
+		    
+		    function paint()
+		    {
+		        var rand = parseInt(Math.random() * 4);
+		        var color = pickColor(rand);
+		        this.style.backgroundColor = color;
+		    }
+		    
+		    function pickColor(num)
+		    {
+		        if(num == 0)
+		        {
+		            return "blue";
+		        }
+		        else if(num == 1)
+		        {
+		            return "purple";
+		        }
+		        else if(num == 2)
+		        {
+		            return "teal";
+		        }
+		        else(num ==3)
+		        {
+		            return "green";
+		        }
+		    }
+		</script>
+	</body>
+</html>
+    
+    
+<!--1.8.2-->
+<!DOCTYPE html>
+<html>
+	<head>
+	    <style>
+	        #textbox{
+                margin: 10px;
+                border: 1px solid 
+black;
+                height: 200px;
+            }
+	    </style>
+	</head>
+    <body>
+    <div id = 'keyboard'>
+    </div>
+    
+    <div id = 'textbox'>
+    </div>
+    </body>
+    <script>
+        makeButton("q");
+        makeButton("w");
+        function makeButton(letter)
+        {
+            var button = document.createElement("button");
+            button.innerHTML = letter;
+            document.getElementById('keyboard').append(button);
+        }
+    </script>
+</html>
+
+<!--1.8.3-->
+<!DOCTYPE html>
+<html>
+	<head>
+	    <style>
+	        #textbox{
+                margin: 10px;
+                border: 1px solid 
+black;
+                height: 200px;
+            }
+	    </style>
+	</head>
+    <body>
+    <div id = 'keyboard'>
+    </div>
+    
+    <div id = 'textbox'>
+    </div>
+    </body>
+    <script>
+        makeButton("q");
+        makeButton("w");
+        function makeButton(letter)
+        {
+            var button = document.createElement("button");
+            button.addEventListener("click", makeText)
+            button.innerHTML = letter;
+            document.getElementById('keyboard').append(button);
+        }
+        
+        function makeText()
+        {
+           document.getElementById("textbox").append(this.innerHTML);
+        }
+    </script>
+</html>
+<!--1.8.4-->
+<!DOCTYPE html>
+<html>
+	<head>
+	    <style>
+    	    #textbox{
+                    margin: 10px;
+                    border: 1px solid 
+black;
+                    height: 200px;
+                }
+            #keyboard{
+                    text-align: center;
+                }
+        </style>
+	</head>
+    <body>
+        <div id = 'keyboard'>
+        </div>
+        
+        <div id = 'textbox'>
+        </div>
+    </body>
+    <script>
+        var alpha = ['q','w','e','r','t','y','u','i','o','p','a','s',
+            'd','f','g','h','j','k','l',';','\'',
+            'z','x','c','v','b','n','m', ',','.','Space'];
+            
+        makeKeyBoard();
+        function makeButton(letter)
+        {
+            var button = document.createElement("button");
+            button.addEventListener("click", makeText)
+            button.append(letter);
+            document.getElementById('keyboard').append(button);
+        }
+        
+        
+        function makeKeyBoard()
+        {
+            
+            for(var i = 1; i < alpha.length + 1; i++)
+            {
+                makeButton(alpha[i - 1]);
+                if(i % 10 == 0)
+                {
+                    var line = document.createElement("br");
+                    document.getElementById('keyboard').append(line);
+                }
+            }
+        }
+        
+        function makeText()
+        {
+            if(this.innerHTML == "Space")
+            {
+                document.getElementById('textbox').append(" ");
+                //alternate solution that allows for multiple spaces
+                //document.getElementById('textbox').append("\u00A0");
+
+            }
+            else
+            {
+                document.getElementById('textbox').append(this.innerHTML);
+            }
+        }
+        
+    </script>
+</html>
+    
+<!--1.9.5-->
+<!DOCTYPE html>
+<html>
+	<body>
+	    <h3>Click on the webpage before typing any keys!</h3>
+    	<script>
+    	    document.body.addEventListener("keydown", keyAlert );
+    	    
+    	    function keyAlert(event)
+    	    {
+    	        alert("You just pressed the " + event.code + " button!");
+    	    }
+    	</script>
+	</body>
+</html>
+    
+<!--1.9.6-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		       height:98%;
+		       width:99%;
+		    }
+		    #container{
+		        display:flex;
+		        flex-wrap: wrap;
+		        height:100%;
+		    }
+		    .inner{
+		        width:32%;
+		        border: 1px solid 
+black;
+		    }
+		</style>
+	</head>
+
+	<body>
+    	<div id = container>
+            <div class = inner></div>
+            <div id = top  class = inner></div>
+            <div class = inner></div>
+            <div id = left class = inner ></div>
+            <div class = inner></div>
+            <div id = right class = inner ></div>
+            <div class = inner></div>
+            <div id = bottom class = inner ></div>
+            <div class = inner></div>
+        </div>
+        
+        <script>
+            var up = document.getElementById("top");
+            var right = document.getElementById("right");
+            var left = document.getElementById("left");
+            var down = document.getElementById("bottom");
+            
+            document.body.addEventListener("keydown", colorDown);
+
+            function colorDown(event)
+            {
+                if(event.key == "ArrowUp"){
+                    up.style.backgroundColor = "yellow";
+                }
+                else if(event.key == "ArrowLeft")
+                {
+                    left.style.backgroundColor = "yellow";
+                }
+                else if(event.key == "ArrowRight")
+                {
+                    right.style.backgroundColor = "yellow";
+                }
+                else if(event.key == "ArrowDown")
+                {
+                    down.style.backgroundColor = "yellow";
+                }
+            }
+        </script>
+	</body>
+</html>
+
+
+<!--1.9.7-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		       height:100%;
+		       width:100%;
+		    }
+		    #container{
+		        display:flex;
+		        flex-wrap: wrap;
+		        height:100%;
+		    }
+		    div div{
+		        width:32%;
+		        border: 1px solid 
+black;
+		    }
+		    .active
+		    {
+		        background-color:
+yellow;
+		    }
+		</style>
+	</head>
+
+	<body>
+    	<div id = container>
+            <div></div>
+            <div id = top></div>
+            <div></div>
+            <div id = left></div>
+            <div></div>
+            <div id = right></div>
+            <div></div>
+            <div id = bottom></div>
+            <div></div>
+        </div>
+        
+        <script>
+            var top = document.getElementById("top");
+            var right = document.getElementById("right");
+            var left = document.getElementById("left");
+            var bottom = document.getElementById("bottom");
+            
+            document.body.addEventListener("keydown", colorDown);
+            
+            function colorDown(event)
+            {
+                if(event.key == "ArrowUp"){
+                    addActive("top");
+                }
+                else if(event.key == "ArrowLeft")
+                {
+                    addActive("left");
+                }
+                else if(event.key == "ArrowRight")
+                {
+                    addActive("right");                
+                    }
+                else if(event.key == "ArrowDown")
+                {
+                    addActive("bottom");
+                }
+            }
+            
+            function addActive(id)
+            {
+                var box = document.getElementById(id);
+                if(box.getAttribute("class") == "active")
+                {
+                    box.removeAttribute("class");
+                }
+                else
+                {
+                    box.setAttribute("class", "active");
+                }
+            }
+        </script>
+	</body>
+</html>
+
+
+
+<!--1.10.5-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		        height:100%;   
+		    }
+		    #container
+		    {
+		        display: flex;
+		        align-items: center;
+		        justify-content: center;
+		        height: 100%;
+		    }
+		    #rotating-box
+		    {
+		        height: 100px;
+		        width: 100px;
+		        border: 1px solid 
+black;
+		    }
+		</style>
+	</head>
+
+	<body>
+		<div id = container>
+		    <div id = rotating-box></div>
+		</div>
+		<script>
+		    var box = document.getElementById("rotating-box");
+		    setInterval(rotate, 100);
+		    var degrees = 0;
+		    
+		    function rotate()
+		    {
+		       box.style.transform = "rotate("+ degrees + "deg)";
+		       degrees += 25;
+		    }
+		</script>
+	</body>
+</html>
+<!--1.10.6-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    #number{
+    		    height: 75px;
+    		    width: 75px;
+    		    font-size: 45px;
+    		    font-weight: bold;
+    		    margin: 10px;
+    		    margin-left: 70px;
+    		    text-align:center;
+                line-height:75px;
+            }
+		</style>
+	</head>
+
+	<body>
+		<h3>Lotto Number Generator</h3>
+		<button id = generate>Click here to start!</button>
+		<button id = stop>Click here to stop!</button>
+		<div id = number></div>
+		
+		<script>
+		    var isClicked = false;
+		    var button = document.getElementById("generate");
+		    var div = document.getElementById("number");
+		    button.addEventListener("click", numGen);
+		    var stopButton = document.getElementById("stop");
+		    stopButton.addEventListener("click", stopNum);
+		    var timer;
+		    
+		    function numGen()
+		    {
+		        if(!isClicked)
+		        {
+		            isClicked = true;
+    		        div.style.border = "solid 1px black";
+    		        timer = setInterval(randNum, 20);
+    		        function randNum()
+    		        {
+    		            var num = parseInt(Math.random() * 10);
+    		            div.innerHTML = num;
+		            }
+		        }
+		    }
+		    
+		    function stopNum()
+		    {
+		        clearInterval(timer);
+		        isClicked = false;
+		        
+		    }
+		</script>
+	</body>
+</html>
+
+<!--1.10.6-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    #number{
+    		    height: 75px;
+    		    width: 75px;
+    		    font-size: 45px;
+    		    font-weight: bold;
+    		    margin: 10px;
+    		    margin-left: 70px;
+    		    text-align:center;
+                line-height:75px;
+            }
+		</style>
+	</head>
+
+	<body>
+		<h3>Lotto Number Generator</h3>
+		<button id = generate>Click here to start!</button>
+		<button id = stop>Click here to stop!</button>
+		<div id = number></div>
+		
+		<script>
+		    var isClicked = false;
+		    var button = document.getElementById("generate");
+		    var div = document.getElementById("number");
+		    button.addEventListener("click", numGen);
+		    var stopButton = document.getElementById("stop");
+		    stopButton.addEventListener("click", stopNum);
+		    var timer;
+		    
+		    function numGen()
+		    {
+		        if(!isClicked)
+		        {
+		            isClicked = true;
+    		        div.style.border = "solid 1px black";
+    		        timer = setInterval(randNum, 20);
+    		        function randNum()
+    		        {
+    		            var num = parseInt(Math.random() * 10);
+    		            div.innerHTML = num;
+		            }
+		        }
+		    }
+		    
+		    function stopNum()
+		    {
+		        clearInterval(timer);
+		        isClicked = false;
+		        
+		    }
+		</script>
+	</body>
+</html>
+<!--1.10.7-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		        height:100%;   
+		    }
+		    #container
+		    {
+		        display: flex;
+		        align-items: center;
+		        justify-content: center;
+		        height: 100%;
+		    }
+		    #rotating-box
+		    {
+		        height: 100px;
+		        width: 100px;
+		        border: 1px solid 
+black;
+		        
+		    }
+		</style>
+	</head>
+
+	<body>
+	        <div id = container>
+		        <div id = rotating-box tabindex="0">
+		    </div>
+		<script>
+		    var box = document.getElementById("rotating-box");
+		    document.body.addEventListener("keydown", rotate)
+		    var degrees = 0;
+		    var right;
+		    var left;
+		    function rotate(event)
+		    {
+		        if(event.key == "ArrowRight")
+		        {
+		            //clear the right so interval doesn't double
+		           clearInterval(right);
+		           clearInterval(left);
+		           right = setInterval(spinRight, 100);
+		           function spinRight()
+		           {
+		               box.style.transform = "rotate("+degrees + "deg)";
+		               degrees += 25;
+		           }
+		        }
+		        else if(event.key == "ArrowLeft")
+		        {
+		            //clear the left so interval doesn't double
+		            clearInterval(left);
+		            clearInterval(right);
+		            left = setInterval(spinLeft, 100);
+		            function spinLeft()
+		            {
+		               box.style.transform = "rotate("+ degrees + "deg)";
+		               degrees -= 25;
+		            }
+		         }
+		      }
+		</script>
+	</body>
+</html>
+
+
+
+
+<!--1.11.5-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice with Positions</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <div id = "circle"></div>
+        <div id = "square"></div>
+        <div id = "triangle"></div>
+    </body>
+    <script>
+        var windowHeight = window.innerHeight;
+        var windowWidth = window.innerWidth;
+        
+        var circle = document.getElementById("circle");
+        var square = document.getElementById("square");
+        var triangle = document.getElementById("triangle");
+        
+        circle.style.position = "relative";
+        triangle.style.position = "relative";
+        square.style.position = "relative";
+        
+        circle.style.top = (windowHeight - 100) +"px";
+        square.style.top = (windowHeight - 100) +"px";
+        triangle.style.top = (windowHeight - 255) +"px";
+        
+        circle.style.left = (windowWidth/2 - 25) +"px";
+        triangle.style.left = (windowWidth/2 - 25) +"px";
+        square.style.left = (windowWidth/2 - 25) +"px";
+    </script>
+</html>
+<!--1.11.6-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		html,body
+		{
+		 height:100%;  
+		 margin:0px;
+		}
+		    #nav-bar
+		    {
+		        list-style-type: none;
+                margin: 0;
+                padding: 0;
+                width: 100px;
+                height:100%;
+                background-color: 
+lightblue;
+                position:relative;
+		    }
+		    li a{
+		        text-align:center;
+		        display:block;
+		        padding-top:5px;
+		        padding-bottom:5px;
+		    }
+		    li a:hover
+		    {
+		        background-color:
+gray;
+		    }
+		    #hide-button a:hover
+		    {
+		        cursor:pointer;
+		        background-color:
+orange;
+		    }
+		</style>
+	</head>
+
+	<body>
+	    <ul id = nav-bar>
+	        <li><a>Home</a></li>
+	        <li><a>Contact Us</a></li>
+	        <li><a>About</a></li>
+	        <li><a>News</a></li>
+	        <li id = hide-button><a>Hide Me!</a></li>
+	    </ul>
+	    
+	    <script>
+	        var button = document.getElementById("hide-button");
+	        var nav = document.getElementById("nav-bar");
+	        button.addEventListener("click", hideNav);
+	        var move = 0;
+	        var timer;
+	        var PAGE_LEFT = 100;
+	        
+	        function hideNav()
+	        {
+	           timer = setInterval(moveLeft,20);    
+	        }
+	        
+	        function moveLeft()
+	        {
+	            nav.style.right = move + "px";
+	            move++;
+	            if(move >= PAGE_LEFT)
+	            {
+	                clearInterval(timer);
+	            }
+	        }
+	        
+	    </script>
+	</body>
+</html>
+
+
+<!--1.11.7-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		        height:98%;   
+		    }
+		    #container{
+		        display:flex;
+		        justify-content:center;
+		        align-items:center;
+		        height:100%;
+		    }
+		    
+		    #square
+		    {
+		        height: 100px;
+		        width:100px;
+		        border: 1px solid 
+black;
+		        background-color: 
+green;
+		        position:relative;
+		    }
+		</style>
+	</head>
+
+	<body>
+		<div id =container>
+		    <div id = square tabindex="0">
+		    </div>
+		</div>
+		
+		<script>
+		    var snake = document.getElementById("square");
+		    document.body.addEventListener("keydown", move);
+		    var rightLeft = 5;
+		    var upDown = 5;
+		    function move(event)
+		    {
+		        if(event.key == "ArrowLeft")
+		        {
+		            snake.style.right = rightLeft + "px";
+		            rightLeft +=5;
+		        }
+		        else if(event.key == "ArrowRight")
+		        {
+		            rightLeft = rightLeft - 5;
+		            snake.style.right= rightLeft +"px";
+		        }
+		        else if(event.key == "ArrowUp")
+		        {
+		            upDown -=5;
+		            snake.style.top = upDown +"px";
+		        }
+		        else if(event.key == "ArrowDown")
+		        {
+		            snake.style.top = upDown +"px";
+		            upDown +=5;
+		        }
+		        
+		    }
+		</script>
+	</body>
+</html>
+
+
+<!--1.11.8-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		
+		    #container
+		    {
+		     display:flex;   
+		    }
+		    div div
+		    {
+		     height: 50px;
+		     width:50px;
+		    }
+		    #div-creator
+		    {
+		        margin:6px;
+		    }
+		</style>
+	</head>
+
+	<body>
+	    <button id = div-creator>
+	        Add a Div!
+	    </button>
+	    <div id = container>
+	        
+	    </div>
+	    <script>
+	        var pageWidth = document.documentElement.clientWidth;
+	        var button = document.getElementById("div-creator");
+	        button.addEventListener("click", addDiv);
+	        var container = document.getElementById("container");
+	        var timer;
+	        var DIV_WIDTH = 50;
+	        var numSquares = 0;
+	        
+	        function addDiv()
+	        {
+	            var moveLeft = 0;
+	            var color = prompt("What color would you like your new div?");
+	            var div = document.createElement("div");
+	            div.style.backgroundColor = color;
+	            div.style.position = "relative";
+	            div.style.transform = "translate(" +(-numSquares *DIV_WIDTH)+ "px)";
+	            container.appendChild(div);
+	            timer = setInterval(move, 20);
+	            function move()
+	            {
+	                if(moveLeft >= numSquares * DIV_WIDTH)
+	                {
+	                    clearInterval(timer);
+	                    numSquares++;
+	                }
+	                div.style.left = moveLeft +"px";
+	                moveLeft++;
+	                
+	            }
+	        }
+	    </script>
+	</body>
+</html>
+
+
+<!--1.11.5-->
+
+
+
+
+
+
+
+
+
+
+
+</html>
